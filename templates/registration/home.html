@@ -1,0 +1,17 @@
+
+
+{% if user.is_authenticated %}
+
+    <p>Hola {{user.username}}</p>
+
+    <p>Haz clic en el siguiente enlace para ver los productos</p>
+    <a href="{% url 'product_list' %}">Supersonic Store</a>
+
+{% else %}
+
+    <p>Ingresa a tu cuenta</p>
+    <a href="{% url 'login' %}">Log In</a>
+    <p>Si no tienes cuenta</p>
+    <a href="{% url 'signup' %}">Sign Up</a>
+
+{% endif %}
